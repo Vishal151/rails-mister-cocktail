@@ -1,1 +1,14 @@
-<h1> Mister mister cocktail - Show </h1>
+<h1> Mister mister cocktail</h1>
+  <h2><%= @cocktail.name %></h2>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+      <li>
+        <%= dose.description %>
+        <%= dose.ingredient.name %>
+        <%= link_to "Remove", cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+      <% end %>
+    </ul>
+    <%= link_to 'Edit cocktail', new_cocktail_dose_path(@cocktail), class: 'btn-change' %>
+  <br></br>
+<h2><%= link_to "Go back", root_path, class: 'card-link' %></h2>
