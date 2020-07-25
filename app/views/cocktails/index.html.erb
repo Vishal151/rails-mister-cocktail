@@ -7,17 +7,16 @@
   <br> </br>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
+
       <div class="col-12 col-md-6 col-lg-3">
-      <container class="flex-box justify: center">
-        <div class="card-product" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');">
-          <div class="card-description">
-            <h2><%= link_to cocktail.name, cocktail_path(cocktail), class: 'card-link' %></h2>
-          </div>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>'), height: 300px"> 
+        <div class="card-category" >
+          "sample text"
         </div>
-      </container>
+        </div>
       </div>
     <% end %>
   </div>
 </div>
 
-<%= render 'navbar' %>
+<%# cl_image_tag("pinacolada_xtsiwt", width: 400, height: 300, crop: :fill) %>
